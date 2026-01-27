@@ -23,3 +23,4 @@ Create data management system:
 - [What does if __name__ == "__main__": do?](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
 - [Tester](https://github.com/ExceptedPrism3/germinette)
 - https://github.com/Destrigo/42_New_Curriculum
+- https://github.com/sousampere?tab=repositories
