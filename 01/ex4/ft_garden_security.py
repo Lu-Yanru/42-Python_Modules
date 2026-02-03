@@ -1,4 +1,5 @@
 class SecurePlant:
+    """Define Plant class with name, height in cm, age in days."""
     def __init__(self, name: str, height: int = 0, age: int = 0) -> None:
         """Method to create an empty object."""
         self.name = name

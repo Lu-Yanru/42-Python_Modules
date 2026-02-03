@@ -1,4 +1,5 @@
 class Plant:
+    """Define Plant class with name, height in cm, age in days."""
     def __init__(self, name: str, height: int, age: int) -> None:
         """Method to create an empty object."""
         self.name = name
@@ -7,6 +8,7 @@ class Plant:
 
 
 class Flower(Plant):
+    """Subclass of Plant, with color and can bloom."""
     def __init__(self, name: str, height: int, age: int, color: str) -> None:
         """Create flower object."""
         super().__init__(name, height, age)
@@ -23,6 +25,7 @@ class Flower(Plant):
 
 
 class Tree(Plant):
+    """Subclass of Plant, with trunk diameter and can produce shade."""
     def __init__(self, name: str, height: int, age: int,
                  trunk_diameter: int) -> None:
         """Create tree object."""
@@ -39,6 +42,7 @@ class Tree(Plant):
 
 
 class Vegetable(Plant):
+    """Subclass of Plant, with harvet season and nutritional value."""
     def __init__(self, name: str, height: int, age: int, season: str) -> None:
         """Create vegetable object."""
         super().__init__(name, height, age)
