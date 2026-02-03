@@ -30,14 +30,14 @@ class SecurePlant:
             print(f"Invalid operation attempted: age {age} days [REJECTED]")
             print("Security: Negative age rejected")
 
-    def get_height(self):
+    def get_height(self) -> int | None:
         """Get the height of the plant."""
         try:
             return self.height
         except Exception:
             return None
 
-    def get_age(self):
+    def get_age(self) -> int | None:
         """Get the age of the plant."""
         try:
             return self.age
