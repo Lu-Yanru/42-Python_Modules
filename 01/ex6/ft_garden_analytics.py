@@ -15,6 +15,11 @@ class Plant:
         """Displays plant info."""
         print(f"- {self.name}: {self.height}cm")
 
+    @classmethod
+    def get_class_name(cls) -> str:
+        """Get the name of the class."""
+        return cls.__name__
+
 
 class FloweringPlant(Plant):
     """
@@ -29,6 +34,7 @@ class FloweringPlant(Plant):
         self.blooming = blooming
 
     def display_info(self) -> None:
+        """Displays info about plant."""
         if self.blooming is True:
             print(f"- {self.name}: "
                   f"{self.height}cm, {self.color} flowers (blooming)")
@@ -49,6 +55,7 @@ class PrizeFlower(FloweringPlant):
         self.prize = prize
 
     def display_info(self) -> None:
+        """Displays info about plant."""
         if self.blooming is True:
             print(f"- {self.name}: "
                   f"{self.height}cm, {self.color} flowers (blooming), "
@@ -80,6 +87,7 @@ class Garden:
         print(f"Added {plant.name} to {self.owner}'s garden.")
 
     def grow_all(self, growth: int = 1) -> None:
+        """Grow all plants in the garden."""
         print(f"{self.owner} is helping all plants grow...")
         for plant in self.plants:
             cm = plant.grow(growth)
@@ -87,7 +95,7 @@ class Garden:
 
 
 class GardenManager:
-    """Class used to anage info of multiple gardens."""
+    """Class used to manage info of multiple gardens."""
     def __init__(self) -> None:
         """Create a garden manager."""
         self.gardens: list = []
@@ -122,7 +130,7 @@ class GardenManager:
     def calc_score(garden: Garden) -> int:
         score = 0
         for plant in garden.plants:
-            plant_class = plant.__class__.__name__
+            plant_class = plant.get_class_name()
             if plant_class == "PrizeFlower":
                 score += plant.prize
             else:
@@ -130,7 +138,7 @@ class GardenManager:
         return score
 
     class GardenStats:
-        """Class used to claculate and display statistics of a garden."""
+        """Class used to calculate and display statistics of a garden."""
         def __init__(self, garden: Garden) -> None:
             """Create garden stats."""
             self.garden = garden
@@ -141,7 +149,7 @@ class GardenManager:
             print("Plants in garden:")
             for plant in self.garden.plants:
                 plant.display_info()
-                plant_class = plant.__class__.__name__
+                plant_class = plant.get_class_name()
                 if plant_class == "FloweringPlant":
                     self.garden.flower += 1
                 elif plant_class == "PrizeFlower":
