@@ -1,11 +1,11 @@
 class Plant:
-    def __init__(self, name: str, height: int, age: int):
+    def __init__(self, name: str, height: int, age: int) -> None:
         """Method to create an empty object."""
         self.name = name
         self.height = height
         self.age = age
 
-    def init_info(self):
+    def init_info(self) -> None:
         """Prints out info of newly created plant."""
         print(f"Created: {self.name} ({self.height}cm, {self.age} days)")
 

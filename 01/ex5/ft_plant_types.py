@@ -1,5 +1,5 @@
 class Plant:
-    def __init__(self, name: str, height: int, age: int):
+    def __init__(self, name: str, height: int, age: int) -> None:
         """Method to create an empty object."""
         self.name = name
         self.height = height
@@ -7,14 +7,14 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name: str, height: int, age: int, color: str):
+    def __init__(self, name: str, height: int, age: int, color: str) -> None:
         """Create flower object."""
         super().__init__(name, height, age)
         self.color = color
         print(f"{self.name} (Flower): "
               f"{self.height}cm, {self.age} days, {self.color} color")
 
-    def bloom(self, status: bool):
+    def bloom(self, status: bool) -> None:
         """Display if flower is blooming or not."""
         if status is True:
             print(f"{self.name} is blooming beautifully!")
@@ -23,7 +23,8 @@ class Flower(Plant):
 
 
 class Tree(Plant):
-    def __init__(self, name: str, height: int, age: int, trunk_diameter: int):
+    def __init__(self, name: str, height: int, age: int,
+                 trunk_diameter: int) -> None:
         """Create tree object."""
         super().__init__(name, height, age)
         self.trunk_diameter = trunk_diameter
@@ -31,21 +32,21 @@ class Tree(Plant):
               f"{self.height}cm, {self.age} days, "
               f"{self.trunk_diameter}cm diameter")
 
-    def produce_shade(self, shade: int):
+    def produce_shade(self, shade: int) -> None:
         """Display how much shade the tree produces."""
         self.shade = shade
         print(f"{self.name} provides {self.shade} sqaure meters of shade")
 
 
 class Vegetable(Plant):
-    def __init__(self, name: str, height: int, age: int, season: str):
+    def __init__(self, name: str, height: int, age: int, season: str) -> None:
         """Create vegetable object."""
         super().__init__(name, height, age)
         self.season = season
         print(f"{self.name} (Vegetable): "
               f"{self.height}cm, {self.age} days, {self.season} harvest")
 
-    def nutritional_value(self, nutrition: str):
+    def nutritional_value(self, nutrition: str) -> None:
         """Display vegetable's nutritional value."""
         self.nutrition = nutrition
         print(f"{self.name} is rich in {self.nutrition}")

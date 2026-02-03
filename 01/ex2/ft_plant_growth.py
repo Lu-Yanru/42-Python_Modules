@@ -1,20 +1,20 @@
 class Plant:
     """Define Plant class with name, height in cm, age in days."""
-    def __init__(self, name: str, height: int, days: int):
+    def __init__(self, name: str, height: int, days: int) -> None:
         """Method to create an empty object."""
         self.name = name
         self.height = height
         self.days = days
 
-    def grow(self, growth: int):
+    def grow(self, growth: int) -> None:
         """Plant growth in height."""
         self.height += growth
 
-    def age(self, time: int):
+    def age(self, time: int) -> None:
         """Plant's age growth in days."""
         self.days += time
 
-    def get_info(self):
+    def get_info(self) -> None:
         """Print out plant info."""
         print(f"{self.name}: {self.height}cm, {self.days} days old")
 

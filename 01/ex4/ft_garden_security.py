@@ -1,12 +1,12 @@
 class SecurePlant:
-    def __init__(self, name: str, height: int = 0, age: int = 0):
+    def __init__(self, name: str, height: int = 0, age: int = 0) -> None:
         """Method to create an empty object."""
         self.name = name
         print(f"Plant created: {self.name}")
         self.set_height(height)
         self.set_age(age)
 
-    def set_height(self, height: int):
+    def set_height(self, height: int) -> None:
         """
         Update height info if the height is positive,
         otherwise print an error message.
@@ -18,7 +18,7 @@ class SecurePlant:
             print(f"Invalid operation attempted: height {height}cm [REJECTED]")
             print("Security: Negative height rejected")
 
-    def set_age(self, age: int):
+    def set_age(self, age: int) -> None:
         """
         Update age info if the age is positive,
         otherwise print an error message.
@@ -30,27 +30,27 @@ class SecurePlant:
             print(f"Invalid operation attempted: age {age} days [REJECTED]")
             print("Security: Negative age rejected")
 
-    def get_height(self):
+    def get_height(self) -> int:
         """Get the height of the plant."""
         try:
             return self.height
         except Exception:
             return None
 
-    def get_age(self):
+    def get_age(self) -> int:
         """Get the age of the plant."""
         try:
             return self.age
         except Exception:
             return None
 
-    def plant_info(self):
+    def plant_info(self) -> None:
         """Print out current plant info."""
         try:
             print("Current plant: "
                   f"{self.name} ({self.height}cm, {self.age} days)")
         except Exception:
-            pass
+            print("Invalid plant info.")
 
 
 def main() -> None:
@@ -64,6 +64,7 @@ def main() -> None:
     plant.set_height(25)
     height2 = plant.get_height()
     print(f"Height after: {height2}cm")
+    plant.plant_info()
     plant.set_age(30)
     print("")
     plant.plant_info()

@@ -23,6 +23,7 @@ Create data management system:
 - [What does if __name__ == "__main__": do?](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
 - [Python exceptions](https://www.geeksforgeeks.org/python/built-exceptions-python/)
 - [Python inheritance](https://www.geeksforgeeks.org/python/inheritance-in-python/)
+- [Python instance, class and static methods](https://realpython.com/instance-class-and-static-methods-demystified/)
 - [Tester](https://github.com/ExceptedPrism3/germinette)
 - https://github.com/Destrigo/42_New_Curriculum
 - https://github.com/sousampere?tab=repositories
