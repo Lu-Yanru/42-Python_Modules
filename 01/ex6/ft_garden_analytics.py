@@ -33,7 +33,7 @@ class FloweringPlant(Plant):
             print(f"- {self.name}: "
                   f"{self.height}cm, {self.color} flowers (blooming)")
         else:
-            print(f"{- self.name}: "
+            print(f"- {self.name}: "
                   f"{self.height}cm, {self.color} flowers (not blooming)")
 
 
