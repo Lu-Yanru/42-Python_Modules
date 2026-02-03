@@ -10,23 +10,26 @@ class Plant:
         print(f"Created: {self.name} ({self.height}cm, {self.age} days)")
 
 
-def create_plant(name: str, height: int, age: int) -> Plant:
-    plant = Plant(name, height, age)
-    plant.init_info()
-    return plant
-
-
 def main() -> None:
     """Displays plant growth info."""
+    plants = [
+        ("Rose", 25, 30),
+        ("Oak", 200, 365),
+        ("Cactus", 5, 90),
+        ("Sunflower", 80, 45),
+        ("Fern", 15, 120)
+    ]
     print("=== Plant Factory Output ===")
-    factory: list = [None] * 5
-    factory[0] = create_plant("Rose", 25, 30)
-    factory[1] = create_plant("Oak", 200, 365)
-    factory[2] = create_plant("Cactus", 5, 90)
-    factory[3] = create_plant("Sunflower", 80, 45)
-    factory[4] = create_plant("Fern", 15, 120)
+    count = 0
+    factory: list = [Plant]
+    for name, height, age in plants:
+        plant = Plant(name, height, age)
+        factory.append(plant)
+        plant.init_info()
+        count += 1
+
     print("")
-    print(f"Total plants created: {len(factory)}")
+    print(f"Total plants created: {count}")
 
 
 if __name__ == "__main__":
