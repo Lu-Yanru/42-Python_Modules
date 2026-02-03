@@ -21,6 +21,7 @@ Create data management system:
 - [PEP 257 - Docstring conventions](https://peps.python.org/pep-0257/)
 - [Shebang line](https://realpython.com/python-shebang/)
 - [What does if __name__ == "__main__": do?](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
+- [Python exceptions](https://www.geeksforgeeks.org/python/built-exceptions-python/)
 - [Tester](https://github.com/ExceptedPrism3/germinette)
 - https://github.com/Destrigo/42_New_Curriculum
 - https://github.com/sousampere?tab=repositories
