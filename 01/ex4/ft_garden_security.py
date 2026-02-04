@@ -13,8 +13,8 @@ class SecurePlant:
         otherwise print an error message.
         """
         if height >= 0:
-            self.height = height
-            print(f"Height updated: {self.height}cm [OK]")
+            self.__height = height
+            print(f"Height updated: {self.__height}cm [OK]")
         else:
             print(f"Invalid operation attempted: height {height}cm [REJECTED]")
             print("Security: Negative height rejected")
@@ -25,8 +25,8 @@ class SecurePlant:
         otherwise print an error message.
         """
         if age >= 0:
-            self.age = age
-            print(f"Age updated: {self.age} days [OK]")
+            self.__age = age
+            print(f"Age updated: {self.__age} days [OK]")
         else:
             print(f"Invalid operation attempted: age {age} days [REJECTED]")
             print("Security: Negative age rejected")
@@ -34,14 +34,14 @@ class SecurePlant:
     def get_height(self) -> int | None:
         """Get the height of the plant."""
         try:
-            return self.height
+            return self.__height
         except Exception:
             return None
 
     def get_age(self) -> int | None:
         """Get the age of the plant."""
         try:
-            return self.age
+            return self.__age
         except Exception:
             return None
 
@@ -49,7 +49,7 @@ class SecurePlant:
         """Print out current plant info."""
         try:
             print("Current plant: "
-                  f"{self.name} ({self.height}cm, {self.age} days)")
+                  f"{self.name} ({self.__height}cm, {self.__age} days)")
         except Exception:
             print("Invalid plant info.")
 
@@ -58,15 +58,21 @@ def main() -> None:
     """Displays secured plant info."""
     print("=== Garden Security System ===")
     plant = SecurePlant("Rose", -1, -1)
+
     print("")
     plant.set_height(-5)
     height1 = plant.get_height()
     print(f"Height before: {height1}")
+
+    # plant.__height = 25
     plant.set_height(25)
     height2 = plant.get_height()
+    # height2 = plant.__height
     print(f"Height after: {height2}cm")
+
     plant.plant_info()
     plant.set_age(30)
+
     print("")
     plant.plant_info()
 
