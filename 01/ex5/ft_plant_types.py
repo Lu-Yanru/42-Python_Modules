@@ -38,11 +38,11 @@ class Tree(Plant):
     def produce_shade(self, shade: int) -> None:
         """Display how much shade the tree produces."""
         self.shade = shade
-        print(f"{self.name} provides {self.shade} sqaure meters of shade")
+        print(f"{self.name} provides {self.shade} square meters of shade")
 
 
 class Vegetable(Plant):
-    """Subclass of Plant, with harvet season and nutritional value."""
+    """Subclass of Plant, with harvest season and nutritional value."""
     def __init__(self, name: str, height: int, age: int, season: str) -> None:
         """Create vegetable object."""
         super().__init__(name, height, age)
