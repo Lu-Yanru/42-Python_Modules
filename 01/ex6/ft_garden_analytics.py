@@ -1,4 +1,5 @@
 class Plant:
+    """Define Plant class with name, height in cm, age in days."""
     def __init__(self, name: str, height: int, age: int) -> None:
         """Method to create an empty object."""
         self.name = name
@@ -182,8 +183,10 @@ def main() -> None:
     print("=== Garden Management System Demo ===\n")
     alice = Garden("Alice")
     bob = Garden("Bob")
+
     manager = GardenManager()
     manager.create_garden_network(alice, bob)
+
     oak = Plant("Oak Tree", 100, 1825)
     rose = FloweringPlant("Rose", 25, 30, "red", True)
     sunflower = PrizeFlower("Sunflower", 50, 80, "yellow", True, 10)
