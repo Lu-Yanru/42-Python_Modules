@@ -26,7 +26,7 @@ def test_temperature_input(temp_str: str) -> None:
     print(f"Testing temperature: {temp_str}")
     try:
         check_temperature(temp_str)
-    except Exception as e:
+    except ValueError as e:
         print(e)
 
 

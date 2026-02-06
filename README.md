@@ -32,7 +32,7 @@ Learn python's exception handling.
 - [Shebang line](https://realpython.com/python-shebang/)
 - [What does if __name__ == "__main__": do?](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
 - [Python Encapsulation](https://www.datacamp.com/tutorial/encapsulation-in-python-object-oriented-programming)
-- [Python exceptions](https://www.geeksforgeeks.org/python/built-exceptions-python/)
+- [Python exceptions tutorial](https://realpython.com/python-exceptions/)
 - [Python inheritance](https://www.geeksforgeeks.org/python/inheritance-in-python/)
 - [Python instance, class and static methods](https://realpython.com/instance-class-and-static-methods-demystified/)
 - [Tester](https://github.com/ExceptedPrism3/germinette)
