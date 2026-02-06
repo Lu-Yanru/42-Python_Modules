@@ -15,6 +15,16 @@ Create data management system:
 - Protecting data integrity in collaborative environments
 - Designing scalable software architectures
 
+## Module 02
+Learn python's exception handling.
+
+- How to validate and clean agricultural data streams in real-time
+- What different failure modes exist in IoT sensor networks
+- How to create custom agricultural alerts for crop-specific monitoring
+- Essential techniques for data pipeline fault tolerance and recovery
+- How to ensure data integrity in distributed farming systems
+
+
 # Resources
 - [Python manual](https://docs.python.org/3/)
 - [PEP 8 - Style guide for Python code](https://peps.python.org/pep-0008/)
