@@ -1,28 +1,27 @@
 def garden_operations(string: str = "1", num: int = 1,
-                      file: str = "ft_different_error.py",
+                      file: str = "ft_different_errors.py",
                       key: str = "height") -> int:
     try:
         res = int(string)
     except ValueError:
-        raise ValueError("Caught ValueError: invalid literal for int()")
+        raise ValueError("Caught ValueError: invalid literal for int()\n")
 
     try:
         res = res // num
     except ZeroDivisionError:
-        raise ZeroDivisionError("Caught ZeroDivisionError: \
-                                division by zero")
+        raise ZeroDivisionError("Caught ZeroDivisionError: division by zero\n")
 
     try:
-        open(file, "r")
+        open(file)
     except FileNotFoundError:
-        raise FileNotFoundError(f"Caught FileNotFoundError: \
-                                No such file '{file}'")
+        raise FileNotFoundError("Caught FileNotFoundError: "
+                                f"No such file '{file}'\n")
 
     try:
         dictionary = {"height": 30, "age": 25}
         print(dictionary[key])
     except KeyError:
-        raise KeyError(f"Caught KeyError: '{key}'")
+        raise KeyError(f"Caught KeyError: '{key}'\n")
 
     return res
 
@@ -37,14 +36,26 @@ def test_error_types() -> None:
     print("Testing ZeroDivisionError...")
     try:
         garden_operations(num=0)
-    except ValueError as e:
+    except ZeroDivisionError as e:
         print(e)
 
-    print("Testing ZeroDivisionError...")
+    print("Testing FileNotFoundError...")
     try:
-        garden_operations(num=0)
-    except ValueError as e:
+        garden_operations(file="missing.txt")
+    except FileNotFoundError as e:
         print(e)
+
+    print("Testing KeyError...")
+    try:
+        garden_operations(key="missing_plant")
+    except KeyError as e:
+        print(str(e.args[0]))
+
+    print("Testing multiple errors together...")
+    try:
+        garden_operations("abc", 0, "missing.txt", "missing_plant")
+    except Exception:
+        print("Caught an error, but program continues!")
 
 
 if __name__ == "__main__":
