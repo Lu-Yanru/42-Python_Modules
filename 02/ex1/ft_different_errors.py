@@ -1,6 +1,7 @@
 def garden_operations(string: str = "1", num: int = 1,
                       file: str = "ft_different_errors.py",
                       key: str = "height") -> int:
+    """A function that performs different operations."""
     try:
         res = int(string)
     except ValueError:
@@ -27,6 +28,7 @@ def garden_operations(string: str = "1", num: int = 1,
 
 
 def test_error_types() -> None:
+    """A function that tests different errors."""
     print("Testing ValueError...")
     try:
         garden_operations(string="abc")
