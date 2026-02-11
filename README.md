@@ -35,6 +35,7 @@ Learn python's exception handling.
 - [Python exceptions tutorial](https://realpython.com/python-exceptions/)
 - [Python inheritance](https://www.geeksforgeeks.org/python/inheritance-in-python/)
 - [Python instance, class and static methods](https://realpython.com/instance-class-and-static-methods-demystified/)
+- [Python decorator](https://realpython.com/primer-on-python-decorators/)
 - [Tester](https://github.com/ExceptedPrism3/germinette)
 - https://github.com/Destrigo/42_New_Curriculum
 - https://github.com/sousampere?tab=repositories
