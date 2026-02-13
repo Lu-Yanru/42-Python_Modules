@@ -1,4 +1,10 @@
 def water_plants(plant_list: list) -> None:
+    """
+    A funtion that waters a list of plants.
+    For each plant, check whether it is a string.
+    If yes, print a message.
+    If not, raise an error.
+    """
     print("Opening watering system")
     try:
         for plant in plant_list:
@@ -13,6 +19,11 @@ def water_plants(plant_list: list) -> None:
 
 
 def test_watering_system() -> None:
+    """
+    Test the water_plants() function with
+    a list of correct types
+    and a list of incorrect types.
+    """
     plant_list1 = ["tomato", "lettuce", "carrots"]
     plant_list2 = ["tomato", None, "carrots"]
 

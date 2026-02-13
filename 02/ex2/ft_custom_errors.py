@@ -14,6 +14,10 @@ class WaterError(GardenError):
 
 
 def test_plant_error(plant: str, wilting: bool) -> None:
+    """
+    If wilting is False, print message,
+    if wilting is True, raise error.
+    """
     if wilting is False:
         print(f"The {plant} plant is growing well.")
     else:
@@ -21,6 +25,10 @@ def test_plant_error(plant: str, wilting: bool) -> None:
 
 
 def test_water_error(water: int) -> None:
+    """
+    If water level is more than 5, print message,
+    else raise error.
+    """
     if water > 5:
         print("There is enough water in the tank.")
     else:
