@@ -24,6 +24,14 @@ Learn python's exception handling.
 - Essential techniques for data pipeline fault tolerance and recovery
 - How to ensure data integrity in distributed farming systems
 
+# Module 03
+Learn Python data structure by creating a data analztics platform.
+
+- Command-line communication
+- Lists
+- Tuples
+- Sets
+- Dictionaries
 
 # Resources
 - [Python manual](https://docs.python.org/3/)
@@ -36,6 +44,7 @@ Learn python's exception handling.
 - [Python inheritance](https://www.geeksforgeeks.org/python/inheritance-in-python/)
 - [Python instance, class and static methods](https://realpython.com/instance-class-and-static-methods-demystified/)
 - [Python decorator](https://realpython.com/primer-on-python-decorators/)
+- [Python Command-Line Arguments](https://realpython.com/python-command-line-arguments/)
 - [Tester](https://github.com/ExceptedPrism3/germinette)
 - https://github.com/Destrigo/42_New_Curriculum
 - https://github.com/sousampere?tab=repositories
