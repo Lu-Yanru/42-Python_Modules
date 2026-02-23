@@ -2,6 +2,7 @@ import sys
 
 
 def main() -> None:
+    """A function to show the command line args."""
     print("=== Command Quest ===")
     argc = len(sys.argv)
     if argc == 1:
