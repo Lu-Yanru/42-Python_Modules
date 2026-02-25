@@ -30,9 +30,14 @@ def total_items(inventory: dict) -> int:
 
 
 def print_inventory(inventory: dict) -> None:
-    """Prints the contents of the dictionary with percentage."""
+    """
+    Prints the contents of the dictionary with percentage
+    sorted from the most abundant to the least.
+    """
     total = total_items(inventory)
-    for item, number in inventory.items():
+    sorted_dict = dict(sorted(inventory.items(), key=lambda item: item[1],
+                       reverse=True))
+    for item, number in sorted_dict.items():
         percentage = number / total * 100
         if number > 1:
             print(f"{item}: {number} units ({percentage:.1f}%)")
@@ -42,38 +47,95 @@ def print_inventory(inventory: dict) -> None:
 
 def find_most_abundant(inventory: dict) -> None:
     """Find and print out the most abundant item in the invenotry."""
-    max = 0
+    maxn = max(inventory.values())
     for key, num in inventory.items():
-        if num > max:
-            max = num
-            item = key
-    if max > 1:
-        print(f"Most abundant: {item} ({max} units)")
+        if num == maxn:
+            break
+    if maxn > 1:
+        print(f"Most abundant: {key} ({maxn} units)")
     else:
-        print(f"Most abundant: {item} ({max} unit)")
+        print(f"Most abundant: {key} ({maxn} unit)")
 
 
 def find_least_abundant(inventory: dict) -> None:
     """Find and print out the least abundant item in the invenotry."""
-    min = sys.maxsize
+    minn = min(inventory.values())
     for key, num in inventory.items():
-        if num < min:
-            min = num
-            item = key
-    if min > 1:
-        print(f"Most abundant: {item} ({min} units)")
+        if num == minn:
+            break
+    if minn > 1:
+        print(f"Most abundant: {key} ({minn} units)")
     else:
-        print(f"Most abundant: {item} ({min} unit)")
+        print(f"Most abundant: {key} ({minn} unit)")
 
 
 def print_categories(inventory: dict) -> None:
     """Print out items based on their rarity categories."""
-    moderate = ["potion"]
+    moderate = ["potion", "arrow"]
     scarce = ["sword", "shield", "armor", "helmet"]
-    rarity_dict = {
+    rarity_dict: dict = {
         "moderate": {},
-        "scarce":
+        "scarce": {}
     }
+    for item in moderate:
+        try:
+            rarity_dict["moderate"].update({item: inventory[item]})
+        except KeyError:
+            continue
+    for item in scarce:
+        try:
+            rarity_dict["scarce"].update({item: inventory[item]})
+        except KeyError:
+            continue
+    print(f"Moderate: {rarity_dict["moderate"]}")
+    print(f"Scarce: {rarity_dict["scarce"]}")
+
+
+def formate_list(lst: list) -> str:
+    """Formate list items into a string separated by comma."""
+    res = ""
+    length = len(lst)
+    for item in lst:
+        res += str(item)
+        if length > 1:
+            res += ", "
+        length -= 1
+    return res
+
+
+def print_suggestions(inventory: dict) -> None:
+    """
+    Check the inventory for items with less than 2 pieces left
+    and print out a message to restock these items.
+    """
+    restock = []
+    for item, num in inventory.items():
+        if num < 2:
+            restock += [item]
+    print(f"Restock needed: {formate_list(restock)}")
+
+
+def dict_demo(inventory: dict) -> None:
+    """Print dict demo info."""
+    keys = []
+    values = []
+    for key, value in inventory.items():
+        keys += [key]
+        values += [value]
+    print(f"Dictionary keys: {formate_list(keys)}")
+    print(f"Dictionary values: {formate_list(values)}")
+
+
+def sample_lookup(inventory: dict, key: str) -> None:
+    """
+    Look up a key in the dictionary.
+    Prints out a message whether it exists.
+    """
+    try:
+        inventory[key]
+        print(f"Sample lookup - '{key}' in inventory: True")
+    except KeyError:
+        print(f"Sample lookup - '{key}' in inventory: False")
 
 
 def main() -> None:
@@ -99,6 +161,16 @@ def main() -> None:
     print("")
     print("=== Item Categories ===")
     print_categories(inventory)
+
+    print("")
+    print("=== Management Suggestions ===")
+    print_suggestions(inventory)
+
+    print("")
+    print("=== Dictionary Properties Demo ===")
+    dict_demo(inventory)
+    sample_lookup(inventory, "sword")
+    sample_lookup(inventory, "arrow")
 
 
 if __name__ == "__main__":
