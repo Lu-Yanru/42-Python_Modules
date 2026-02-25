@@ -46,6 +46,8 @@ Learn Python data structure by creating a data analztics platform.
 - [Python decorator](https://realpython.com/primer-on-python-decorators/)
 - [Python Command-Line Arguments](https://realpython.com/python-command-line-arguments/)
 - [Python dictionaries](https://realpython.com/python-dicts/)
+- [Iterables vs. Iterators vs. Generators](https://nvie.com/posts/iterators-vs-generators/)
+- [Python Iterators and Generators Tutorial](https://www.datacamp.com/tutorial/python-iterators-generators-tutorial)
 - [Tester](https://github.com/ExceptedPrism3/germinette)
 - https://github.com/Destrigo/42_New_Curriculum
 - https://github.com/sousampere?tab=repositories
