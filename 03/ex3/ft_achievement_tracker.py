@@ -1,0 +1,36 @@
+def main() -> None:
+    print("=== Achievement Tracker System ===")
+    print("")
+
+    alice = {"first_kill", "level_10", "treasure_hunter", "speed_demon"}
+    bob = {"first_kill", "level_10", "boss_slayer", "collector"}
+    charlie = {"level_10", "treasure_hunter", "boss_slayer", "speed_demon",
+               "perfectionist"}
+
+    print(f"Player alice achievements: {alice}")
+    print(f"Player bob achievements: {bob}")
+    print(f"Player charlie achievements: {charlie}")
+
+    print("")
+    print("=== Achievement Analytics ===")
+    all = alice.union(bob, charlie)
+    print(f"All unique achievements: {all}")
+    print(f"Total unique achievements: {len(all)}")
+
+    print("")
+    common = alice.intersection(bob, charlie)
+    common_ab = alice.intersection(bob)
+    common_ac = alice.intersection(charlie)
+    common_bc = bob.intersection(charlie)
+    print(f"Common to all players: {common}")
+    print(f"Rare achievements (1 player): {all.difference(common_ab, common_ac,
+                                                          common_bc)}")
+
+    print("")
+    print(f"Alice vs Bob common: {common_ab}")
+    print(f"Alice unique: {alice.difference(bob)}")
+    print(f"Bob unique: {bob.difference(alice)}")
+
+
+if __name__ == "__main__":
+    main()
