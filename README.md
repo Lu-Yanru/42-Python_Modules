@@ -4,6 +4,12 @@
 ## Module 00
 Basic Python syntax.
 
+### Resources
+- [Python manual](https://docs.python.org/3/)
+- [PEP 8 - Style guide for Python code](https://peps.python.org/pep-0008/)
+- [PEP 257 - Docstring conventions](https://peps.python.org/pep-0257/)
+
+
 ## Module 01
 Understand Python programming concepts, starting from basic program structure and progressing to object-oriented programming.
 
@@ -15,6 +21,13 @@ Create data management system:
 - Protecting data integrity in collaborative environments
 - Designing scalable software architectures
 
+### Resources
+- [Shebang line](https://realpython.com/python-shebang/)
+- [What does if __name__ == "__main__": do?](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
+- [Python Encapsulation](https://www.datacamp.com/tutorial/encapsulation-in-python-object-oriented-programming)
+- [Python exceptions tutorial](https://realpython.com/python-exceptions/)
+
+
 ## Module 02
 Learn python's exception handling.
 
@@ -24,30 +37,49 @@ Learn python's exception handling.
 - Essential techniques for data pipeline fault tolerance and recovery
 - How to ensure data integrity in distributed farming systems
 
-# Module 03
-Learn Python data structure by creating a data analztics platform.
+### Resources
+- [Python inheritance](https://www.geeksforgeeks.org/python/inheritance-in-python/)
+- [Python instance, class and static methods](https://realpython.com/instance-class-and-static-methods-demystified/)
+- [Python decorator](https://realpython.com/primer-on-python-decorators/)
+
+
+## Module 03
+Learn Python data structure by creating a data analytics platform.
 
 - Command-line communication
 - Lists
 - Tuples
 - Sets
 - Dictionaries
+- Generators
+- Comprehensions
 
-# Resources
-- [Python manual](https://docs.python.org/3/)
-- [PEP 8 - Style guide for Python code](https://peps.python.org/pep-0008/)
-- [PEP 257 - Docstring conventions](https://peps.python.org/pep-0257/)
-- [Shebang line](https://realpython.com/python-shebang/)
-- [What does if __name__ == "__main__": do?](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
-- [Python Encapsulation](https://www.datacamp.com/tutorial/encapsulation-in-python-object-oriented-programming)
-- [Python exceptions tutorial](https://realpython.com/python-exceptions/)
-- [Python inheritance](https://www.geeksforgeeks.org/python/inheritance-in-python/)
-- [Python instance, class and static methods](https://realpython.com/instance-class-and-static-methods-demystified/)
-- [Python decorator](https://realpython.com/primer-on-python-decorators/)
+### Resources
 - [Python Command-Line Arguments](https://realpython.com/python-command-line-arguments/)
 - [Python dictionaries](https://realpython.com/python-dicts/)
 - [Iterables vs. Iterators vs. Generators](https://nvie.com/posts/iterators-vs-generators/)
 - [Python Iterators and Generators Tutorial](https://www.datacamp.com/tutorial/python-iterators-generators-tutorial)
+- [How to use Generators and yield in Python](https://realpython.com/introduction-to-python-generators/)
+- [Comprehensions in Python](https://www.geeksforgeeks.org/python/comprehensions-in-python/)
+- [When to use a List Comprehension in Python](https://realpython.com/python-dictionary-comprehension/)
+- [Python Dictionary Comprehensions](https://realpython.com/python-dictionary-comprehension/)
+- [Python set comprehensions](https://realpython.com/python-set-comprehension/)
+
+## Module 04
+
+## Module 05
+
+## Module 06
+
+## Module 07
+
+## Module 08
+
+## Module 09
+
+## Module 10
+
+## Resources
 - [Tester](https://github.com/ExceptedPrism3/germinette)
 - https://github.com/Destrigo/42_New_Curriculum
 - https://github.com/sousampere?tab=repositories
