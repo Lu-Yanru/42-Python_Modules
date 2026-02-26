@@ -33,7 +33,7 @@ def main() -> None:
     for arg in sys.argv[1:]:
         print(f"Parsing coordinates: \"{arg}\"")
         str_lst = arg.split(",")
-        int_lst = []
+        int_lst: list[int] = []
         for i in str_lst:
             try:
                 num = int(i)

@@ -6,7 +6,7 @@ def main() -> None:
     A function that takes scores from the command line
     and stores them into a list.
     """
-    scores = []
+    scores: list[int] = []
 
     print("=== Player Score Analytics ===")
 

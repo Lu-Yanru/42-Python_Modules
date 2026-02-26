@@ -1,9 +1,9 @@
 import sys
 
 
-def parse_input() -> dict:
+def parse_input() -> dict[str, int]:
     """Parse the input and store them in a dictionary."""
-    inventory = {}
+    inventory: dict[str, int] = {}
     item = ""
     number = ""
     for arg in sys.argv[1:]:
@@ -24,12 +24,12 @@ def parse_input() -> dict:
     return inventory
 
 
-def total_items(inventory: dict) -> int:
+def total_items(inventory: dict[str, int]) -> int:
     """Caclulates the total number of items in the inventory."""
     return sum(inventory.values())
 
 
-def print_inventory(inventory: dict) -> None:
+def print_inventory(inventory: dict[str, int]) -> None:
     """
     Prints the contents of the dictionary with percentage
     sorted from the most abundant to the least.
@@ -45,9 +45,10 @@ def print_inventory(inventory: dict) -> None:
             print(f"{item}: {number} unit ({percentage:.1f}%)")
 
 
-def find_most_abundant(inventory: dict) -> None:
+def find_most_abundant(inventory: dict[str, int]) -> None:
     """Find and print out the most abundant item in the invenotry."""
     maxn = max(inventory.values())
+    key = ""
     for key, num in inventory.items():
         if num == maxn:
             break
@@ -57,9 +58,10 @@ def find_most_abundant(inventory: dict) -> None:
         print(f"Most abundant: {key} ({maxn} unit)")
 
 
-def find_least_abundant(inventory: dict) -> None:
+def find_least_abundant(inventory: dict[str, int]) -> None:
     """Find and print out the least abundant item in the invenotry."""
     minn = min(inventory.values())
+    key = ""
     for key, num in inventory.items():
         if num == minn:
             break
@@ -69,11 +71,11 @@ def find_least_abundant(inventory: dict) -> None:
         print(f"Most abundant: {key} ({minn} unit)")
 
 
-def print_categories(inventory: dict) -> None:
+def print_categories(inventory: dict[str, int]) -> None:
     """Print out items based on their rarity categories."""
     moderate = ["potion", "arrow"]
     scarce = ["sword", "shield", "armor", "helmet"]
-    rarity_dict: dict = {
+    rarity_dict: dict[str, dict[str, int]] = {
         "moderate": {},
         "scarce": {}
     }
@@ -91,7 +93,7 @@ def print_categories(inventory: dict) -> None:
     print(f"Scarce: {rarity_dict["scarce"]}")
 
 
-def formate_list(lst: list) -> str:
+def formate_list(lst: list[str] | list[int]) -> str:
     """Formate list items into a string separated by comma."""
     res = ""
     length = len(lst)
@@ -103,22 +105,22 @@ def formate_list(lst: list) -> str:
     return res
 
 
-def print_suggestions(inventory: dict) -> None:
+def print_suggestions(inventory: dict[str, int]) -> None:
     """
     Check the inventory for items with less than 2 pieces left
     and print out a message to restock these items.
     """
-    restock = []
+    restock: list[str] = []
     for item, num in inventory.items():
         if num < 2:
             restock += [item]
     print(f"Restock needed: {formate_list(restock)}")
 
 
-def dict_demo(inventory: dict) -> None:
+def dict_demo(inventory: dict[str, int]) -> None:
     """Print dict demo info."""
-    keys = []
-    values = []
+    keys: list[str] = []
+    values: list[int] = []
     for key, value in inventory.items():
         keys += [key]
         values += [value]
@@ -126,7 +128,7 @@ def dict_demo(inventory: dict) -> None:
     print(f"Dictionary values: {formate_list(values)}")
 
 
-def sample_lookup(inventory: dict, key: str) -> None:
+def sample_lookup(inventory: dict[str, int], key: str) -> None:
     """
     Look up a key in the dictionary.
     Prints out a message whether it exists.
