@@ -68,6 +68,9 @@ Learn Python data structure by creating a data analytics platform.
 ## Module 04
 Learn file operations: open, read, write files and handle errors.
 
+### Resources
+- [Reading and writing files in Python](https://realpython.com/read-write-files-python/)
+
 ## Module 05
 
 ## Module 06
