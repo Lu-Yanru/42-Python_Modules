@@ -58,10 +58,14 @@ def main() -> None:
               f"{calc_distance(start, new_coor): .2f}")
         print("")
 
-    print("Unpacking demonstration:")
-    (x, y, z) = new_coor
-    print(f"Player at x={x}, y={y}, z={z}")
-    print(f"Coordinates: X={x}, Y={y}, Z={z}")
+    try:
+        print("Unpacking demonstration:")
+        (x, y, z) = new_coor
+        print(f"Player at x={x}, y={y}, z={z}")
+        print(f"Coordinates: X={x}, Y={y}, Z={z}")
+    except UnboundLocalError:
+        print("No valid coordinate has been inputed "
+              "and thus nothing can be unpacked.")
 
 
 if __name__ == "__main__":
