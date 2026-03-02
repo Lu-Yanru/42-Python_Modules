@@ -1,3 +1,13 @@
+# from typing import TextIO
+
+
+# def check_closed(file: TextIO) -> None:
+#     if file.closed is True:
+#         print("File is closed.")
+#     else:
+#         print("File is open.")
+
+
 def main() -> None:
     """Retrieve data from a file."""
     print("=== CYBER ARCHIVES - DATA RECOVERY SYSTEM ===\n")
@@ -7,16 +17,21 @@ def main() -> None:
     print(f"Accessing Storage Vault: {filename}")
 
     try:
-        with open(filename, "r") as reader:
-            print("Connection established...\n")
-            print("RECOVERED DATA:")
-            # Read and print the entire file
-            print(reader.read())
-        print("\nData recovery complete. Storage unit disconnected.")
-    except FileNotFoundError:
+        file = open(filename, "r")
+    except (FileNotFoundError, PermissionError):
         print("\nERROR: Storage vault not found.")
-    except PermissionError:
-        print("\nERROR: Access to storage vault denied.")
+        return
+
+    print("Connection established...\n")
+    print("RECOVERED DATA:")
+    # Read and print the entire file
+    print(file.read())
+
+    # check_closed(file)
+    print("\nData recovery complete. Storage unit disconnected.")
+
+    file.close()
+    # check_closed(file)
 
 
 if __name__ == "__main__":
