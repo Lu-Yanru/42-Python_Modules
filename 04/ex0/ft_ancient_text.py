@@ -13,8 +13,10 @@ def main() -> None:
             # Read and print the entire file
             print(reader.read())
         print("\nData recovery complete. Storage unit disconnected.")
-    except (FileNotFoundError, PermissionError):
+    except FileNotFoundError:
         print("\nERROR: Storage vault not found.")
+    except PermissionError:
+        print("\nERROR: Access to storage vault denied.")
 
 
 if __name__ == "__main__":
