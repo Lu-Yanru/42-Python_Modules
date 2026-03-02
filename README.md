@@ -66,7 +66,7 @@ Learn Python data structure by creating a data analytics platform.
 - [Python set comprehensions](https://realpython.com/python-set-comprehension/)
 
 ## Module 04
-Learn file operations: open, read, write files and handle errors.
+Learn file operations: open, read, write files, stdin, stdout, stderr, and handle errors.
 
 ### Resources
 - [Reading and writing files in Python](https://realpython.com/read-write-files-python/)
