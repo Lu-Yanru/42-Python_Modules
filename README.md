@@ -70,8 +70,10 @@ Learn file operations: open, read, write files, stdin, stdout, stderr, and handl
 
 ### Resources
 - [Reading and writing files in Python](https://realpython.com/read-write-files-python/)
+- [Resource acquisition is initialization](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization)
 
 ## Module 05
+Learn method overriding, subtype polymorphism, inheritance hierarchies and interfaces.
 
 ## Module 06
 
