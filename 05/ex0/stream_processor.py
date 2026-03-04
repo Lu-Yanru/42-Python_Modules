@@ -5,32 +5,32 @@ from typing import Any
 class DataProcessor(ABC):
     """Abstract base class that defines the common processing interface."""
     @abstractmethod
-    def process(self, data: Any) -> str:
+    def process(self: "DataProcessor", data: Any) -> str:
         pass
 
     @abstractmethod
-    def validate(self, data: Any) -> bool:
+    def validate(self: "DataProcessor", data: Any) -> bool:
         pass
 
-    def format_output(self, result: str) -> str:
+    def format_output(self: "DataProcessor", result: str) -> str:
         """Default formatting that can be overritten."""
         return result
 
 
 class NumericProcessor(DataProcessor):
     """Specilized class for processing numeric data."""
-    def __init__(self) -> None:
+    def __init__(self: "NumericProcessor") -> None:
         """Instantiates an empty list to store the data."""
         self.data: list[int | float] = []
 
-    def process(self, data: Any) -> str:
+    def process(self: "NumericProcessor", data: Any) -> str:
         """Process a list of numerics."""
         if self.validate(data) is False:
             return "Not numeric data!"
         self.data = data
         return "Numeric data verified"
 
-    def validate(self, data: Any) -> bool:
+    def validate(self: "NumericProcessor", data: Any) -> bool:
         """Validate data type is a list of numeric."""
         if isinstance(data, list) is False:
             return False
@@ -39,7 +39,7 @@ class NumericProcessor(DataProcessor):
                 return False
         return True
 
-    def format_output(self, result: str) -> str:
+    def format_output(self: "NumericProcessor", result: str) -> str:
         """Formate output of processing numeric data."""
         if len(self.data) == 0:
             return result
@@ -52,22 +52,22 @@ class NumericProcessor(DataProcessor):
 
 class TextProcessor(DataProcessor):
     """Specilized class for processing text data."""
-    def __init__(self) -> None:
+    def __init__(self: "TextProcessor") -> None:
         """Instantiates an empty str to store the data."""
         self.data: str = ""
 
-    def process(self, data: Any) -> str:
+    def process(self: "TextProcessor", data: Any) -> str:
         """Process a str."""
         if self.validate(data) is False:
             return "Not text data!"
         self.data = data
         return "Text data verified"
 
-    def validate(self, data: Any) -> bool:
+    def validate(self: "TextProcessor", data: Any) -> bool:
         """Validate data type is a str."""
         return isinstance(data, str)
 
-    def format_output(self, result: str) -> str:
+    def format_output(self: "TextProcessor", result: str) -> str:
         """Formate output of processing text data."""
         if self.data == "":
             return result
@@ -79,18 +79,18 @@ class TextProcessor(DataProcessor):
 
 class LogProcessor(DataProcessor):
     """Specilized class for processing text data."""
-    def __init__(self) -> None:
+    def __init__(self: "LogProcessor") -> None:
         """Instantiates an empty str to store the data."""
         self.data: str = ""
 
-    def process(self, data: Any) -> str:
+    def process(self: "LogProcessor", data: Any) -> str:
         """Process a str."""
         if self.validate(data) is False:
             return "Not Log data!"
         self.data = data
         return "Log entry verified"
 
-    def validate(self, data: Any) -> bool:
+    def validate(self: "LogProcessor", data: Any) -> bool:
         """Validate data type is a str and it starts with ERROR or INFO."""
         if isinstance(data, str) is False:
             return False
@@ -98,7 +98,7 @@ class LogProcessor(DataProcessor):
             return True
         return False
 
-    def format_output(self, result: str) -> str:
+    def format_output(self: "LogProcessor", result: str) -> str:
         """Formate output of processing text data."""
         if self.data == "":
             return result
