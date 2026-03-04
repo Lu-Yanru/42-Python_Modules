@@ -38,13 +38,22 @@ class SensorStream(DataStream):
         if len(data_batch) == 0:
             raise ValueError("ERROR: Sensor data is empty!")
 
+        mandatory_keys = ["temp", "humidity", "pressure"]
         for reading in data_batch:
+            # Check if each reading is a dict
             if isinstance(reading, Dict) is False:
                 raise TypeError("ERROR: Sensor data not corretly formatted!")
-            for key, value in reading.items():
-                if key != "temp" and key != "humidity" and key != "pressure":
+            # Check if dict hass all the mandatory keys
+            for key in mandatory_keys:
+                if key not in reading:
                     raise KeyError("ERROR: "
                                    "Sensor data not corretly formatted!")
+            for key, value in reading.items():
+                # Check if all the present keys are mandatory
+                if key not in mandatory_keys:
+                    raise KeyError("ERROR: "
+                                   "Sensor data not corretly formatted!")
+                # Check if values are int or float
                 if isinstance(value, (int, float)) is False:
                     raise ValueError("ERROR: "
                                      "Sensor data not corretly formatted!")
@@ -59,6 +68,9 @@ class SensorStream(DataStream):
         press1 = first["pressure"]
         res += f"[temp:{temp1}, humidity:{hum1}, pressure:{press1}]"
         return res
+
+    def filter_data(self: DataStream, data_batch: List[Any], criteria: str | None = None) -> List[Any]:
+        return super().filter_data(data_batch, criteria)
 
     def get_stats(self: "DataStream") -> Dict[str, Union[str, int, float]]:
         """Get sensor stats"""
@@ -78,12 +90,29 @@ class SensorStream(DataStream):
         return res
 
 
+class TransactionStream(DataStream):
+    """Specialzed class for transactions stream."""
+    def __init__(self: "TransactionStream", stream_id: str) -> None:
+        super().__init__(stream_id)
+        print("Initializing Transaction Stream...")
+        print(f"Stream ID: {self.id}, Type: Financial Data")
+
+    def process_batch(self: DataStream, data_batch: List[Any]) -> str:
+        return super().process_batch(data_batch)
+
+    def filter_data(self: DataStream, data_batch: List[Any], criteria: str | None = None) -> List[Any]:
+        return super().filter_data(data_batch, criteria)
+
+    def get_stats(self: DataStream) -> Dict[str, str | int | float]:
+        return super().get_stats()
+
+
 def main() -> None:
     """Test data stream classes and stream processor."""
     print("=== CODE NEXUS - POLYMORPHIC STREAM SYSTEM ===\n")
 
-    sensor_dat = [{"temp": 22.5, "humidity": 65, "pressure": 1013},
-                  {"temp": 23.0, "humidity": 63, "pressure": 1010}]
+    sensor_dat = [{"temp": 22.5,  "humidity": 65, "pressure": 1013},
+                  {"temp": 23.0,  "humidity": 63, "pressure": 1010}]
     sensor_stream = SensorStream("SENSOR_001")
     try:
         print(sensor_stream.process_batch(sensor_dat))
@@ -97,7 +126,9 @@ def main() -> None:
         print(e)
 
     print("")
-    print("\nInitializing Transaction Stream...")
+    transaction_dat = [{"buy": 100, "sell": 150},
+                       {"buy": 75, "sell": 60},
+                       {"buy": 50}]
 
     print("\nInitializing Event Stream...")
 
