@@ -80,6 +80,7 @@ Learn polymorphism, inheritance hierarchies, method overriding, interfaces and d
 - [Python abstract classes: A comprehensive guide with examples](https://www.datacamp.com/tutorial/python-abstract-classes)
 - [Implementing an interface in Python](https://realpython.com/python-interface/)
 - [Python type Optional](https://towardsdatascience.com/python-types-optional-can-mean-mandatory-8e3b7ac2e805/)
+- [Python Protocols](https://realpython.com/python-protocol/)
 
 ## Module 06
 
