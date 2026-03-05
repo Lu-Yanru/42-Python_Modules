@@ -385,12 +385,18 @@ def main() -> None:
 
     processor = StreamProcessor()
     processor.set_streams([sensor_stream, transaction_stream, event_stream])
+    all_dat: List[List[Any]] = []
+    all_dat.append(sensor_dat)
+    all_dat.append(transaction_dat)
+    all_dat.append(event_dat)
+    filters = ["high", "large", "error"]
+
     print("\nBatch 1 Results:")
-    processor.process_all([sensor_dat, transaction_dat, event_dat])
+    processor.process_all(all_dat)
 
     print("")
     print("Stream filtering active: High-priority data only")
-    processor.filter_all([sensor_dat, transaction_dat, event_dat], ["high", "large", "error"])
+    processor.filter_all(all_dat, filters)
 
     print("")
     print("All streams processed successfully. Nexus throughput optimal.")
