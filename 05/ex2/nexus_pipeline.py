@@ -1,9 +1,29 @@
 from abc import ABC, abstractmethod
-from typing import Any, List, Dict, Union, Optional
+from typing import Any, List, Dict, Union, Optional, Protocol
 
 
-def ProcessingPipline(ABC):
+class ProcessingStage(Protocol):
+    """Protocol of processing stages."""
+    pass
+
+
+class ProcessingPipline(ABC):
     """Abstract processing pipline."""
+    def __init__(self: "ProcessingPipline") -> None:
+        self.stages: List[ProcessingStage] = []
+
+    def add_stage(self: "ProcessingPipline",
+                  stage: ProcessingStage) -> None:
+        """Add a stage to the pipline."""
+        self.stages.append(stage)
+
+    @abstractmethod
+    def process(self: "ProcessingPipline", data: Any) -> Any:
+        pass
+
+
+class JSONAdapter(ProcessingPipline):
+    """Specialized pipline for JSON."""
     pass
 
 
