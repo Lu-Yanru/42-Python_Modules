@@ -81,6 +81,7 @@ Learn polymorphism, inheritance hierarchies, method overriding, interfaces and d
 - [Implementing an interface in Python](https://realpython.com/python-interface/)
 - [Python type Optional](https://towardsdatascience.com/python-types-optional-can-mean-mandatory-8e3b7ac2e805/)
 - [Python Protocols](https://realpython.com/python-protocol/)
+- [Inheritance and composition: A Python OOP guide](https://realpython.com/inheritance-composition-python/)
 
 ## Module 06
 

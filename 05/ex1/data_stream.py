@@ -384,19 +384,23 @@ def main() -> None:
     print("Processing mixed stream types through unified interface...")
 
     processor = StreamProcessor()
-    processor.set_streams([sensor_stream, transaction_stream, event_stream])
-    all_dat: List[List[Any]] = []
-    all_dat.append(sensor_dat)
-    all_dat.append(transaction_dat)
-    all_dat.append(event_dat)
     filters = ["high", "large", "error"]
+    try:
+        processor.set_streams([sensor_stream, transaction_stream,
+                               event_stream])
+        all_dat: List[List[Any]] = []
+        all_dat.append(sensor_dat)
+        all_dat.append(transaction_dat)
+        all_dat.append(event_dat)
 
-    print("\nBatch 1 Results:")
-    processor.process_all(all_dat)
+        print("\nBatch 1 Results:")
+        processor.process_all(all_dat)
 
-    print("")
-    print("Stream filtering active: High-priority data only")
-    processor.filter_all(all_dat, filters)
+        print("")
+        print("Stream filtering active: High-priority data only")
+        processor.filter_all(all_dat, filters)
+    except TypeError as e:
+        print(e)
 
     print("")
     print("All streams processed successfully. Nexus throughput optimal.")
