@@ -124,14 +124,14 @@ def main() -> None:
 
     print("\nInitializing Text Processor...")
     str_dat = "Hello Nexus World"
-    print(f"Processing data: {str_dat}")
+    print(f'Processing data: "{str_dat}"')
     str_proc = TextProcessor()
     print(f"Validation: {str_proc.process(str_dat)}")
     print(f"Output: {str_proc.format_output("")}")
 
     print("\nInitializing Log Processor...")
     log_dat = "ERROR: Connection timeout"
-    print(f"Processing data: {log_dat}")
+    print(f'Processing data: "{log_dat}"')
     log_proc = LogProcessor()
     print(f"Validation: {log_proc.process(log_dat)}")
     print(f"Output: {log_proc.format_output("")}")
