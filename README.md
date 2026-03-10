@@ -84,6 +84,15 @@ Learn polymorphism, inheritance hierarchies, method overriding, interfaces and d
 - [Inheritance and composition: A Python OOP guide](https://realpython.com/inheritance-composition-python/)
 
 ## Module 06
+Learn Python's import system:
+
+- Organize code into modules and packages
+- Absolute vs. relative imports
+- Circular dependency resolution
+
+### Resources
+- [What is Python's __init__.py for?](https://realpython.com/python-init-py/)
+- [Python's __all__: Packages, modules, and wildcard imports](https://realpython.com/python-all-attribute/)
 
 ## Module 07
 
