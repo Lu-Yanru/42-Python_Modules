@@ -87,6 +87,7 @@ Learn polymorphism, inheritance hierarchies, method overriding, interfaces and d
 Learn Python's import system:
 
 - Organize code into modules and packages
+- Different import styles
 - Absolute vs. relative imports
 - Circular dependency resolution
 
