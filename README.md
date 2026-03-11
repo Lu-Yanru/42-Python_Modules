@@ -98,6 +98,7 @@ Learn Python's import system:
 - [Python circular import: Causes, fixes and best practices](https://www.datacamp.com/tutorial/python-circular-import)
 
 ## Module 07
+Create flexible, extensible architecture using abstract base classes, multiple inheritance, and interface composition.
 
 ## Module 08
 
