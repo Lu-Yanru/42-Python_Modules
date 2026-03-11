@@ -31,3 +31,10 @@ class CreatureCard(Card):
             "damage_dealt": self.attack,
             "combat_resolved": True
         }
+
+    def get_card_info(self: "CreatureCard") -> dict:
+        res = super().get_card_info()
+        res.update({"type": "Creature",
+                    "attack": self.attack,
+                    "health": self.health})
+        return res
