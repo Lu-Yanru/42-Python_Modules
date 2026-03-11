@@ -94,6 +94,7 @@ Learn Python's import system:
 ### Resources
 - [What is Python's __init__.py for?](https://realpython.com/python-init-py/)
 - [Python's __all__: Packages, modules, and wildcard imports](https://realpython.com/python-all-attribute/)
+- [Absolute vs relative imports in Python](https://realpython.com/absolute-vs-relative-python-imports/)
 
 ## Module 07
 
