@@ -11,37 +11,74 @@ class EliteCard(Card, Combatable, Magical):
                  defend: int, mana: int) -> None:
         super().__init__(name, cost, rarity)
         if attack < 0 or defend < 0 or health < 0:
-             raise ValueError("ValueError: Attack, defend and health cannot be negative.")
+            raise ValueError("ValueError: Attack, defend and health "
+                             "cannot be negative.")
         self.health = health
         self.att = attack
         self.defd = defend
         self.mana = mana
 
-    def play(self, game_state: dict) -> dict
-def attack(self: "Combatable", target: Card) -> dict:
-        """Abstract attack method"""
-        pass
+    def play(self: "EliteCard", game_state: dict) -> dict:
+        """Specific way to play elite card."""
+        return {"card_played": self.name,
+                "mana_used": self.cost,
+                "effect": "Elite summoned with combat and magic abilities."}
 
-    @abstractmethod
-    def defend(self: "Combatable", incoming_damage: int) -> dict:
-        """Abstract defend method."""
-        pass
+    def attack(self: "EliteCard", target: Card) -> dict:
+        """Elite attack method"""
+        return {
+            "attacker": self.name,
+            "target": target.name,
+            "damage": self.att,
+            "combate_type": "melee"
+        }
 
-    @abstractmethod
-    def get_combat_stats(self: "Combatable") -> dict:
-        """Abstract get combat stats method."""
-        pass
+    def defend(self: "EliteCard", incoming_damage: int) -> dict:
+        """Elite defend method."""
+        damage_taken = max(0, incoming_damage - self.defd)
+        self.health -= damage_taken
+        return {
+            "defender": self.name,
+            "damage_taken": damage_taken,
+            "damage_blocked": min(incoming_damage, self.defd),
+            "still_alive": self.health > 0
+        }
 
-def cast_spell(self: "Magical", spell_name: str, targets: list) -> dict:
-        """Abstract cast spell method."""
-        pass
+    def get_combat_stats(self: "EliteCard") -> dict:
+        """Elite get combat stats method."""
+        return {
+            "card_played": self.name,
+            "attack": self.att,
+            "defend": self.defd,
+            "health": self.health
+        }
 
-    @abstractmethod
-    def channel_mana(self: "Magical", amount: int) -> dict:
-        """Abstract channel mana method."""
-        pass
+    def cast_spell(self: "EliteCard", spell_name: str,
+                   targets: list[Card]) -> dict:
+        """Elite cast spell method."""
+        self.mana -= self.cost
+        return {
+            "caster": self.name,
+            "spell": spell_name,
+            "targets": [t.name for t in targets],
+            "mana_used": self.cost
+        }
 
-    @abstractmethod
-    def get_magic_stats(self: "Magical") -> dict:
-        """Abstract get magic stats method."""
-        pass
+    def channel_mana(self: "EliteCard", amount: int) -> dict:
+        """Elite channel mana method."""
+        if amount < 0:
+            raise ValueError("ValueError: "
+                             "Cannot channel negative amount of mana.")
+        self.mana += amount
+        return {
+            "channeled": amount,
+            "total_mana": self.mana
+        }
+
+    def get_magic_stats(self: "EliteCard") -> dict:
+        """Elite get magic stats method."""
+        return {
+            "card_played": self.name,
+            "cost": self.cost,
+            "mana": self.mana
+        }
