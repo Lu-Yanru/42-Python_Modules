@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
         # Create enemy
         enemy = factory.create_creature("Enemy Player")
-        engine.battlefield = [enemy]
+        engine.battlefield.append(enemy)
 
         print("\nTurn execution:")
         print(f"Strategy: {strategy.get_strategy_name()}")

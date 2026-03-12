@@ -7,6 +7,8 @@ class Card(ABC):
                  cost: int, rarity: str) -> None:
         """Constructor."""
         self.name = name
+        if cost < 0:
+            raise ValueError("ValueError: Cost cannot be negative.")
         self.cost = cost
         self.rarity = rarity
 
