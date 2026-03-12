@@ -11,7 +11,6 @@ from ex3.CardFactory import CardFactory
 class FantasyCardFactory(CardFactory):
     """Concrete factory."""
     def __init__(self: "FantasyCardFactory") -> None:
-        self.cards = []
         self.creatures = ["dragon", "goblin"]
         self.spells = ["fireball"]
         self.artifacts = ["mana_ring"]
@@ -31,17 +30,18 @@ class FantasyCardFactory(CardFactory):
 
     def create_themed_deck(self: "FantasyCardFactory",
                            size: int) -> dict:
+        cards = []
         for i in range(size):
-            self.cards.append(self.create_creature(
+            cards.append(self.create_creature(
                 random.choice(self.creatures)
             ))
-            self.cards.append(self.create_spell(
+            cards.append(self.create_spell(
                 random.choice(self.spells)
             ))
-            self.cards.append(self.create_artifact(
+            cards.append(self.create_artifact(
                 random.choice(self.artifacts)
             ))
-        return {"deck": self.cards}
+        return {"deck": cards}
 
     def get_supported_types(self: "FantasyCardFactory") -> dict:
         return {

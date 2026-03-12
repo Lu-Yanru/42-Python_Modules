@@ -8,20 +8,21 @@ class GameEngine:
                          strategy: GameStrategy) -> None:
         self.factory = factory
         self.strategy = strategy
+        self.cards_created = 0
         self.hand = []
-        self.battelfield = []
+        self.battlefield = []
         self.turns_simulated = 0
         self.log = []
 
     def simulate_turn(self: "GameEngine") -> dict:
         self.turns_simulated += 1
-        actions = self.strategy.execute_turn(self.hand, self.battelfield)
+        actions = self.strategy.execute_turn(self.hand, self.battlefield)
         self.log.append(actions)
         return {
             "turns_simulated": self.turns_simulated,
             "strategy_used": self.strategy.get_strategy_name(),
             "total_damage": actions.get("damage_dealt", 0),
-            "cards_created": len(self.hand)
+            "cards_created": self.cards_created
         }
 
     def get_engine_status(self: "GameEngine") -> dict:
