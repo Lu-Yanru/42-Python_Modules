@@ -1,3 +1,4 @@
+from ex0.Card import Card
 from ex3.CardFactory import CardFactory
 from ex3.GameStrategy import GameStrategy
 
@@ -9,10 +10,10 @@ class GameEngine:
         self.factory = factory
         self.strategy = strategy
         self.cards_created = 0
-        self.hand = []
-        self.battlefield = []
+        self.hand: list[Card] = []
+        self.battlefield: list[Card] = []
         self.turns_simulated = 0
-        self.log = []
+        self.log: list[dict] = []
 
     def simulate_turn(self: "GameEngine") -> dict:
         self.turns_simulated += 1

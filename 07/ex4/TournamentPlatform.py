@@ -4,7 +4,7 @@ from ex4.TournamentCard import TournamentCard
 class TournamentPlatform:
     """Platform management system."""
     def __init__(self: "TournamentPlatform") -> None:
-        self.cards = {}
+        self.cards: dict[str, TournamentCard] = {}
         self.matches_played = 0
 
     def register_card(self: "TournamentPlatform", card: TournamentCard) -> str:
