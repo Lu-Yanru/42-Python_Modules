@@ -101,6 +101,10 @@ Learn Python's import system:
 Create flexible, extensible architecture using abstract base classes, multiple inheritance, and interface composition.
 
 ## Module 08
+Create and configure virtual environment.
+
+### Resources
+- [Python Virtual Environments: A primer](https://realpython.com/python-virtual-environments-a-primer/)
 
 ## Module 09
 
