@@ -8,7 +8,7 @@ def main() -> None:
     real_prefix = getattr(sys, "real_prefix", None)
     base_prefix = getattr(sys, "base_prefix", sys.prefix)
 
-    # directory prefix that mgiht be overwritten in virtual env
+    # directory prefix that might be overwritten in virtual env
     venv_path = getattr(sys, "prefix", base_prefix)
     # venv name is the get the last str in the path
     venv_name = os.path.basename(venv_path)
