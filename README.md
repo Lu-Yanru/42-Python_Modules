@@ -104,6 +104,9 @@ Create flexible, extensible architecture using abstract base classes, multiple i
 Create and configure virtual environment.
 
 ### Resources
+- [Python venv documentation](https://docs.python.org/3/library/venv.html)
+- [Python sys.path documentation](https://docs.python.org/3/library/sys_path_init.html#sys-path-init-virtual-environments)
+- [Python site documentation](https://docs.python.org/3/library/site.html#site-virtual-environments-configuration)
 - [Determining if Python is running a virtual environment](https://www.geeksforgeeks.org/python/determining-if-python-is-running-in-a-virtualenv/)
 - [Python Virtual Environments: A primer](https://realpython.com/python-virtual-environments-a-primer/)
 
