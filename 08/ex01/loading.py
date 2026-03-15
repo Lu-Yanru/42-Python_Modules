@@ -29,11 +29,11 @@ def matrix_analysis() -> None:
     # convert data into pandas dataframe
     df = pd.DataFrame(data, columns=["Data"])
     # add another column which is the index of each data point
-    df["Time"] = np.arange(len(df))
+    df["Index"] = np.arange(len(df))
 
     print("Generating visualization...")
     plt.figure()
-    plt.plot(df["Time"], df["Data"])
+    plt.plot(df["Index"], df["Data"])
 
     print("\nAnalysis complete!")
     res = "matrix_analysis.png"

@@ -112,6 +112,8 @@ Create and configure virtual environment, package maangement with `pip` and `peo
 - [Python packaging user guide: Installing packages](https://packaging.python.org/en/latest/tutorials/installing-packages/)
 - [How to check if Python package is installed](https://www.geeksforgeeks.org/python/how-to-check-if-python-package-is-installed/)
 - [Dependency management with Python poetry](https://realpython.com/dependency-management-python-poetry/)
+- [Using Python environment variables with python dotenv](https://www.geeksforgeeks.org/python/using-python-environment-variables-with-python-dotenv/)
+- [Access environment variable values in Python](https://www.geeksforgeeks.org/python/access-environment-variable-values-in-python/)
 
 ## Module 09
 
