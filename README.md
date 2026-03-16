@@ -116,6 +116,14 @@ Create and configure virtual environment, package maangement with `pip` and `peo
 - [Access environment variable values in Python](https://www.geeksforgeeks.org/python/access-environment-variable-values-in-python/)
 
 ## Module 09
+Data validation with `pydantic`.
+
+- Basic data validation fundamentals with `BaseModel` and `Field`
+- Custom validation rules and logic with `@model_validator` decorator
+- Nested models and complex relationships
+
+### Resources
+- [Pydantic documentation](https://docs.pydantic.dev/latest/)
 
 ## Module 10
 
@@ -124,3 +132,4 @@ Create and configure virtual environment, package maangement with `pip` and `peo
 - https://github.com/Destrigo/42_New_Curriculum
 - https://github.com/sousampere?tab=repositories
 - https://github.com/BayramWilson/42/tree/main/rank02/python_modules
+- https://github.com/semere-meb?tab=repositories
