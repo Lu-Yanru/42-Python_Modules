@@ -124,6 +124,7 @@ Data validation with `pydantic`.
 
 ### Resources
 - [Pydantic documentation](https://docs.pydantic.dev/latest/)
+- [Python documentation enum](https://docs.python.org/3/library/enum.html#enum.Enum)
 
 ## Module 10
 
