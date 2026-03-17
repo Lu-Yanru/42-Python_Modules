@@ -137,6 +137,7 @@ Function programming in Python.
 
 ### Resources
 - [How to use python lambda functions](https://realpython.com/python-lambda/)
+- [Python args and kwargs: Demystified](https://realpython.com/python-kwargs-and-args/)
 
 ## Resources
 - [Tester](https://github.com/ExceptedPrism3/germinette)
