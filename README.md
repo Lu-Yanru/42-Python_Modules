@@ -127,6 +127,16 @@ Data validation with `pydantic`.
 - [Python documentation enum](https://docs.python.org/3/library/enum.html#enum.Enum)
 
 ## Module 10
+Function programming in Python.
+
+- Lambda functions
+- High-order functions
+- Lexical scoping and closures
+- `functools` module
+- Decorators
+
+### Resources
+- [How to use python lambda functions](https://realpython.com/python-lambda/)
 
 ## Resources
 - [Tester](https://github.com/ExceptedPrism3/germinette)
