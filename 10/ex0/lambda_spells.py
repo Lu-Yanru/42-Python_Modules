@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+
+
 def artifact_sorter(artifacts: list[dict]) -> list[dict]:
     print("Testing artifaact sorter...")
     res = sorted(artifacts,
