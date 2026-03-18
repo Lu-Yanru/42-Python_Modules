@@ -1,5 +1,6 @@
-from functools import reduce, partial, wraps
+from functools import reduce, partial, lru_cache, singledispatch
 import operator
+# from timeit import default_timer as timer
 from typing import Callable
 
 
@@ -33,8 +34,45 @@ def partial_enchanter(base_enchantment: Callable) -> dict[str, Callable]:
     }
 
 
-# def memoized_fibonacci(n: int) -> int
-# def spell_dispatcher() -> Callable
+@lru_cache
+def memoized_fibonacci(n: int) -> int:
+    """
+    Calculate fibonacci sequence while caching the result using the
+    Least Recently Used (LRU) strategy
+    to improve performance for repeated calls.
+    Return the nth fibonacci number.
+    """
+    if n <= 0:
+        return 0
+    if n == 1:
+        return 1
+    return memoized_fibonacci(n - 1) + memoized_fibonacci(n - 2)
+
+
+def spell_dispatcher() -> Callable:
+    """
+    Create a spell single dispatch system.
+    Handle different types: int (damage spell),
+    str (enchantment), list (multi-cast).
+    Return the dispatcher function.
+    """
+    @singledispatch
+    def spell(arg) -> str:
+        return f"Unknown spell type: {type(arg).__name__}"
+
+    @spell.register(int)
+    def _1(arg: int) -> str:
+        return f"Damage spell deals {arg} damage"
+
+    @spell.register(str)
+    def _2(arg: str) -> str:
+        return f"Enchantment {arg} applied"
+
+    @spell.register(list)
+    def _3(arg: list) -> str:
+        return f"Casting multiple spells: {arg}"
+
+    return spell
 
 
 def base_enchantment(power: int, element: str, target: str) -> str:
@@ -59,4 +97,16 @@ if __name__ == "__main__":
     print(enchants["ice_enchant"](target="Goblin"))
     print(enchants["lightning_enchant"](target="Orc"))
 
-    fibonacci_tests = [8, 19, 20]
+    print("\nTesting memoized fibonacci...")
+    print(f"Fib(10): {memoized_fibonacci(10)}")
+    # start = timer()
+    print(f"Fib(15): {memoized_fibonacci(15)}")
+    # end = timer()
+    # print(end - start)
+
+    print("\nTesting spell dispatcher...")
+    dispatcher = spell_dispatcher()
+    print(dispatcher(42))
+    print(dispatcher("flaming"))
+    print(dispatcher(["fireball", "lightning", "heal"]))
+    print(dispatcher({"key": "value"}))

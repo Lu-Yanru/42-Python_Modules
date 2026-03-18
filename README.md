@@ -132,7 +132,7 @@ Functional programming in Python.
 - Lambda functions
 - High-order functions
 - Lexical scoping and closures
-- `functools` module (reduce())
+- `functools` module (reduce, partial, lru_cache, singledispatch)
 - Decorators
 
 ### Resources
@@ -144,6 +144,10 @@ Functional programming in Python.
 - [Python documentation functools](https://docs.python.org/3/library/functools.html)
 - [Python documentation operator](https://docs.python.org/3/library/operator.html)
 - [Python's reduce(): From functional to pythonic style](https://realpython.com/python-reduce-function/)
+- [Partial functions in Python](https://www.geeksforgeeks.org/python/partial-functions-python/)
+- [Caching in Python using the LRU cache strategy](https://realpython.com/lru-cache-python/)
+- [Function overloading with singledispatch-functools](https://www.geeksforgeeks.org/python/function-overloading-with-singledispatch-functools/)
+
 
 ## Resources
 - [Tester](https://github.com/ExceptedPrism3/germinette)
