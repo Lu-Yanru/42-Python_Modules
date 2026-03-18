@@ -138,6 +138,9 @@ Function programming in Python.
 ### Resources
 - [How to use python lambda functions](https://realpython.com/python-lambda/)
 - [Python args and kwargs: Demystified](https://realpython.com/python-kwargs-and-args/)
+- [A Python tutorial to understanding scopes and closures](https://medium.com/@dannymcwaves/a-python-tutorial-to-understanding-scopes-and-closures-c6a3d3ba0937)
+- [Python closures: Common use cases and examples](https://realpython.com/python-closure/)
+- [Python scope and the LEGB rule: Resolving names in your code](https://realpython.com/python-scope-legb-rule/#nested-functions-the-enclosing-scope)
 
 ## Resources
 - [Tester](https://github.com/ExceptedPrism3/germinette)
