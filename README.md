@@ -40,7 +40,6 @@ Learn python's exception handling.
 ### Resources
 - [Python inheritance](https://www.geeksforgeeks.org/python/inheritance-in-python/)
 - [Python instance, class and static methods](https://realpython.com/instance-class-and-static-methods-demystified/)
-- [Python decorator](https://realpython.com/primer-on-python-decorators/)
 
 
 ## Module 03
@@ -147,6 +146,7 @@ Functional programming in Python.
 - [Partial functions in Python](https://www.geeksforgeeks.org/python/partial-functions-python/)
 - [Caching in Python using the LRU cache strategy](https://realpython.com/lru-cache-python/)
 - [Function overloading with singledispatch-functools](https://www.geeksforgeeks.org/python/function-overloading-with-singledispatch-functools/)
+- [Python decorator](https://realpython.com/primer-on-python-decorators/)
 
 
 ## Resources
