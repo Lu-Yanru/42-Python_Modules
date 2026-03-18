@@ -127,12 +127,12 @@ Data validation with `pydantic`.
 - [Python documentation enum](https://docs.python.org/3/library/enum.html#enum.Enum)
 
 ## Module 10
-Function programming in Python.
+Functional programming in Python.
 
 - Lambda functions
 - High-order functions
 - Lexical scoping and closures
-- `functools` module
+- `functools` module (reduce())
 - Decorators
 
 ### Resources
@@ -141,6 +141,9 @@ Function programming in Python.
 - [A Python tutorial to understanding scopes and closures](https://medium.com/@dannymcwaves/a-python-tutorial-to-understanding-scopes-and-closures-c6a3d3ba0937)
 - [Python closures: Common use cases and examples](https://realpython.com/python-closure/)
 - [Python scope and the LEGB rule: Resolving names in your code](https://realpython.com/python-scope-legb-rule/#nested-functions-the-enclosing-scope)
+- [Python documentation functools](https://docs.python.org/3/library/functools.html)
+- [Python documentation operator](https://docs.python.org/3/library/operator.html)
+- [Python's reduce(): From functional to pythonic style](https://realpython.com/python-reduce-function/)
 
 ## Resources
 - [Tester](https://github.com/ExceptedPrism3/germinette)
